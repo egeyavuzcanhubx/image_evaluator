@@ -7,7 +7,7 @@ from transformers import ViltProcessor, ViltForImageAndTextRetrieval
 
 class ImageEvaluator:
     def __init__(self, device: str = None):
-        # Determine device
+        
         self.device = device if device else ('cuda' if torch.cuda.is_available() else 'cpu')
         
         # Initialize ViLT processor and model
@@ -72,7 +72,7 @@ class ImageEvaluator:
 # Example usage:
 if __name__ == "__main__":
     evaluator = ImageEvaluator()
-    image_path = "/home/egeyavuzcan/car/1.png"  # Replace with your image file path
+    image_path = "/home/egeyavuzcan/car/1.png" 
     prompt = " A blue muscle car driving down a rural road at sunset"
     
     results = evaluator.evaluate(image_path, prompt)
